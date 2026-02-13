@@ -19,19 +19,6 @@ Projekt používa moderný stack: PHP 8.5, Laravel 11, MySQL, TailwindCSS 4 a Vi
 
 ---
 
-## 🔧 Nastavenie databázy
-
-V súbore `.env` použite nasledovnú konfiguráciu:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=todoapp
-DB_USERNAME=root
-DB_PASSWORD=
-````
-
 ***
 
 ## 📥 Inštalácia projektu
@@ -99,7 +86,17 @@ Vytvor MySQL databázu s názvom:
 
     todoapp
 
-Potom nastav údaje v `.env` súbore (viď vyššie).
+Potom nastav údaje v `.env` súbore
+## 🔧 Nastavenie databázy
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=todoapp
+DB_USERNAME=root
+DB_PASSWORD=
+````
 
 ***
 
