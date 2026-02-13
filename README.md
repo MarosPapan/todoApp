@@ -1,23 +1,15 @@
 ***
-
-
-````markdown
 # 📝 TodoApp – Laravel 11 + MySQL + TailwindCSS
-
-Jednoduchá TODO aplikácia postavená na Laravel frameworku.  
-Projekt používa moderný stack: PHP 8.5, Laravel 11, MySQL, TailwindCSS 4 a Vite.
-
----
 
 ## 🚀 Použité technológie
 
 - **PHP:** 8.5.1  
-- **Composer:** 2.9.5  
+- **Composer:** 2.9.5
+- **Laravel:** 12.50.0
 - **Laravel Installer:** 5.24.4  
 - **Databáza:** MySQL  
-- **TailwindCSS:** 4.0.0  
-
----
+- **TailwindCSS:** 4.0.0
+- 
 
 ***
 
@@ -82,7 +74,7 @@ php artisan key:generate
 
 ### 7. Nastav databázu
 
-Vytvor MySQL databázu s názvom:
+Vytvor MySQL databázu s názvom (APACHE):
 
     todoapp
 
@@ -142,11 +134,5 @@ npm run dev
 ***
 
 ## 🎉 Hotovo!
-
-
-```
-
-
-```
 
  
