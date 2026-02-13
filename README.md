@@ -133,6 +133,10 @@ npm run dev
 
 ***
 
-## 🎉 Hotovo!
+## ▶️ Prihlasenie Userov:
+
+Email: treba zistiť v databaze -> tabuľka User -> stĺpec email
+
+Heslo pre každeho vygenerovaného usera pomocou seedera: Hesloje123
 
  
