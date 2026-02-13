@@ -1,48 +1,155 @@
-PHP verzia - 8.5.1 
-Composer verzia - 2.9.5 
-Laravel Installer verzia - 5.24.4 
-Databaza - MySQL 
-        DB_CONNECTION=mysql
-        DB_HOST=127.0.0.1
-        DB_PORT=3306
-        DB_DATABASE=todoapp
-        DB_USERNAME=root
-        DB_PASSWORD=
-
-Tailwindcss - 4.0.0
+***
 
 
-- Inštrukcie na inštaláciu projektu
-    + Stiahnuť projekt (source code), rozzipovať a otvoriť v    obľubenom Code Editore.
-    + Alternatíva clone: 
-        git clone https://github.com/MarosPapan/todoApp.git
-        cd todoapp
+````markdown
+# 📝 TodoApp – Laravel 11 + MySQL + TailwindCSS
 
-    + v terminály (cmd) navigovať do koreňového priečinka projektu
+Jednoduchá TODO aplikácia postavená na Laravel frameworku.  
+Projekt používa moderný stack: PHP 8.5, Laravel 11, MySQL, TailwindCSS 4 a Vite.
 
-    + Nainštalovať PHP závislosti: composer install
+---
 
-    + Nainštalovať Node.js závislosti: npm install
+## 🚀 Použité technológie
 
-    + Skopírovať .env súbor: .env.example. -> copy -> .env
+- **PHP:** 8.5.1  
+- **Composer:** 2.9.5  
+- **Laravel Installer:** 5.24.4  
+- **Databáza:** MySQL  
+- **TailwindCSS:** 4.0.0  
 
-    + Generovať aplikačný kľúč: php artisan key:generate
+---
 
-    + Nastaviť databázu v .env: 
-        DB_CONNECTION=mysql
-        DB_HOST=127.0.0.1
-        DB_PORT=3306
-        DB_DATABASE=todoapp
-        DB_USERNAME=root
-        DB_PASSWORD=
-    
-    + APACHE vytvoriť databázu s názvom: todoapp
+## 🔧 Nastavenie databázy
 
-    + Spustiť migrácie: php artisan migrate 
+V súbore `.env` použite nasledovnú konfiguráciu:
 
-    + Spustiť seeder (testovacie dáta): php artisan db seed 
-        + alternatíva: php artisan migrate:fresh --seed
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=todoapp
+DB_USERNAME=root
+DB_PASSWORD=
+````
 
-    + Spustenie APlikácie (serveru): http://localhost:8000/
-        + npm run dev (v jednom terminali pre VITE)
-        + php artisan serve (v inom terminaly pre LARAVEL)
+***
+
+## 📥 Inštalácia projektu
+
+### 1. Stiahnutie projektu
+
+#### A) ZIP verzia
+
+1.  Stiahni projekt
+2.  Rozbaľ ZIP
+3.  Otvor priečinok v obľúbenom editore (VS Code)
+
+#### B) Git clone
+
+```bash
+git clone https://github.com/MarosPapan/todoApp.git
+cd todoapp
+```
+
+***
+
+### 2. Prejdi do koreňového priečinka projektu
+
+```bash
+cd /cesta/k/projektu
+```
+
+***
+
+### 3. Nainštaluj PHP závislosti
+
+```bash
+composer install
+```
+
+***
+
+### 4. Nainštaluj Node.js závislosti
+
+```bash
+npm install
+```
+
+***
+
+### 5. Skopíruj environment súbor
+
+```bash
+cp .env.example .env
+```
+
+***
+
+### 6. Vygeneruj aplikačný kľúč
+
+```bash
+php artisan key:generate
+```
+
+***
+
+### 7. Nastav databázu
+
+Vytvor MySQL databázu s názvom:
+
+    todoapp
+
+Potom nastav údaje v `.env` súbore (viď vyššie).
+
+***
+
+### 8. Spusti migrácie
+
+```bash
+php artisan migrate
+```
+
+***
+
+### 9. Naplň databázu testovacími dátami (voliteľné)
+
+```bash
+php artisan db:seed
+```
+
+alebo:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+***
+
+## ▶️ Spustenie aplikácie
+
+### 1. Spusti Laravel server
+
+```bash
+php artisan serve
+```
+
+Aplikácia beží na:  
+👉 <http://localhost:8000/>
+
+### 2. Spusti vývojový režim (Vite)
+
+```bash
+npm run dev
+```
+
+***
+
+## 🎉 Hotovo!
+
+
+```
+
+
+```
+
+ 
