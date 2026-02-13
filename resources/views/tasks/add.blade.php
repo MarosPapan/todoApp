@@ -84,7 +84,7 @@
         </div>
     @endif
       <div class="flex items-center justify-end gap-3">
-        <a href="" 
+        <a href="{{ route('home') }}" 
            class="inline-flex items-center rounded-lg border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
           Cancel
         </a>

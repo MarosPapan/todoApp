@@ -22,7 +22,7 @@ class AuthController extends Controller
         $credentials = $request->only("email", "password");
 
         if(Auth::attempt($credentials)) {
-            //$request->session()->regenerate();
+        
             return redirect()->intended(route("home"));
         } 
         return redirect(route("login"))->with( "error", "Invalid credentials" );
@@ -30,8 +30,7 @@ class AuthController extends Controller
 
     function logout(Request $request) {
         Auth::logout();
-        //$request->session()->invalidate();
-        //$request->session()->regenerateToken();
+    
         return redirect(route("login"))->with("success", "Logged out successfully.");
     }
 
@@ -50,7 +49,7 @@ class AuthController extends Controller
         $user = new User();
         $user->name = $request->name; 
         $user->email = $request->email; 
-        $user->password = Hash::make($request->password); // Hash the password before saving
+        $user->password = Hash::make($request->password);
         if($user->save()){
             return redirect(route("login"))->with("success", "Account created successfully. Please login.");
         }

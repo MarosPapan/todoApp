@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tasks;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +12,7 @@ class TaskManager extends Controller
 {
 
     function listTasks() {
-        $tasks = Tasks::where("user_id", Auth::id())->orderBy("due_at")->get(); 
+        $tasks = Task::where("user_id", Auth::id())->orderBy("due_at")->get(); 
         return view("welcome", compact("tasks"));
     }
 
@@ -27,27 +27,19 @@ class TaskManager extends Controller
             'description' => 'nullable|string'
         ]);
 
-        $task = new Tasks(); 
+        $task = new Task(); 
         $task->name = $request->name; 
         $task->due_at = $request->due_at; 
         $task->description = $request->description; 
-        $task->user_id = auth()->user()->id; // Associate task with the authenticated user
+        $task->user_id = auth()->user()->id;
         if($task->save()){ 
             return redirect(route("home"))->with("success", "Task added successfully."); 
         } 
         return redirect(route("task.add"))->with("error", "Failed to add task. Please try again.");
      }   
 
-    //  function updateTaskCompleted($id) {
-    //     if(Tasks::where("user_id", auth()->user()->id)
-    //         ->where("id", $id)->update([ "completed" => true ])){
-    //         return redirect(route("home"))->with("success", "Task marked as completed.");
-    //     } 
-    //     return redirect(route("home"))->with("error", "Failed to update task. Please try again.");
-    //  }
-
      
-    public function toggle(Tasks $task): RedirectResponse
+    public function toggle(Task $task): RedirectResponse
     {
         $task->timestamps = false;
         $task->forceFill([
@@ -58,20 +50,10 @@ class TaskManager extends Controller
                 'status',
                 $task->completed ? 'Task marked as completed.' : 'Task marked as pending.'
             );
-
-    
-        // $task->completed = !$task->completed; 
-        // $task->timestamps = false;
-        // $task->save();
-
-        // return back()->with('status', $task->completed
-        //     ? 'Task marked as completed.'
-        //     : 'Task marked as pending.'
-        // );
     }
 
     function editTask($id) {
-        $task = Tasks::where("user_id", auth()->user()->id)
+        $task = Task::where("user_id", auth()->user()->id)
             ->where("id", $id)->firstOrFail();
 
         
@@ -91,7 +73,7 @@ class TaskManager extends Controller
             'description' => 'nullable|string'
         ]);
 
-        if(Tasks::where("user_id", auth()->user()->id)
+        if(Task::where("user_id", auth()->user()->id)
             ->where("id", $id)->update([
                 "name" => $request->name,
                 "due_at" => $request->due_at,
@@ -103,7 +85,7 @@ class TaskManager extends Controller
      }
 
     function deleteTask($id) {
-        if(Tasks::where("user_id", auth()->user()->id)
+        if(Task::where("user_id", auth()->user()->id)
             ->where("id", $id)->delete()){
             return redirect(route("home"))->with("success", "Task deleted successfully.");
         } 
