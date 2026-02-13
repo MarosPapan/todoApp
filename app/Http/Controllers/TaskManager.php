@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Collection;
+use App\Http\Requests\TaskRequest;
 
 class TaskManager extends Controller
 {
@@ -20,13 +21,8 @@ class TaskManager extends Controller
         return view('tasks.add');
     }
 
-    function addTaskPost(Request $request) { 
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'due_at' => 'required|date',
-            'description' => 'nullable|string'
-        ]);
-
+    function addTaskPost(TaskRequest $request) { 
+        
         $task = new Task(); 
         $task->name = $request->name; 
         $task->due_at = $request->due_at; 
@@ -65,13 +61,7 @@ class TaskManager extends Controller
         return view('tasks.edit', compact('task'));
      }
 
-     function updateTask(Request $request, $id) {
-
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'due_at' => 'required|date',
-            'description' => 'nullable|string'
-        ]);
+     function updateTask(TaskRequest $request, $id) {
 
         if(Task::where("user_id", auth()->user()->id)
             ->where("id", $id)->update([

@@ -1,0 +1,1 @@
+Celý priebeh vývoja tejto aplikácie nebol pre mňa cudzí pretože MVC architektúru už poznám z iných projektov. Najmä z python framework Django.
