@@ -1,20 +1,15 @@
 ***
-
-
-````markdown
-# 📝 TodoApp – Laravel 11 + MySQL + TailwindCSS
-
----
+# 📝 TodoApp – Laravel 12 + MySQL + TailwindCSS
 
 ## 🚀 Použité technológie
 
 - **PHP:** 8.5.1  
-- **Composer:** 2.9.5  
+- **Composer:** 2.9.5
+- **Laravel:** 12.50.0
 - **Laravel Installer:** 5.24.4  
 - **Databáza:** MySQL  
-- **TailwindCSS:** 4.0.0  
-
----
+- **TailwindCSS:** 4.0.0
+- 
 
 ***
 
@@ -79,15 +74,14 @@ php artisan key:generate
 
 ### 7. Nastav databázu
 
-Vytvor MySQL databázu s názvom:
+Vytvor MySQL databázu s názvom (APACHE):
 
     todoapp
 
-Potom nastav údaje v `.env` súbore 
+Potom nastav údaje v `.env` súbore
+## 🔧 Nastavenie databázy
 
-V súbore `.env` použite nasledovnú konfiguráciu:
-
-```env
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -140,11 +134,5 @@ npm run dev
 ***
 
 ## 🎉 Hotovo!
-
-
-```
-
-
-```
 
  
